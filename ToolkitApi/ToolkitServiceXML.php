@@ -804,7 +804,7 @@ class XMLWrapper
         // initialize results array to empty arrays for both regular in/out params and return params
         $callResults = array('io_param'=>array(), 'retvals'=>array());
         
-        $xmlobj = simplexml_load_string($xml);
+        $xmlobj = simplexml_load_string(htmlspecialchars($xml));
         
         // note: outer, ignored node name will be <script> (if successful call)
         //                                     or <report> (if unsuccessful)
